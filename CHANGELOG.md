@@ -4,6 +4,9 @@
 
 ## [Unreleased]
 
+### Added
+- Increased compatibility range with 252.* versions
+
 ## [0.0.2] - 2025-04-14
 
 ### Added
