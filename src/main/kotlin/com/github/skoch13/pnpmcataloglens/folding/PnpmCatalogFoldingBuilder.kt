@@ -51,10 +51,10 @@ class PnpmCatalogFoldingBuilder : FoldingBuilderEx(), DumbAware {
                     val catalogVersion = pnpmWorkspaceService.resolveCatalogVersion(packageName, element.value)
                     if (catalogVersion != null) {
                         // Create dependencies for proper invalidation
-                        val dependencies = if (workspaceYamlPsiFile != null) {
-                            setOf<Any>(element, element.containingFile, workspaceYamlPsiFile)
-                        } else {
-                            setOf<Any>(element, element.containingFile, workspaceFile!!)
+                        val dependencies = when {
+                            workspaceYamlPsiFile != null -> setOf<Any>(element, element.containingFile, workspaceYamlPsiFile)
+                            workspaceFile != null && workspaceFile.isValid -> setOf<Any>(element, element.containingFile, workspaceFile)
+                            else -> setOf<Any>(element, element.containingFile)
                         }
 
                         // Create a folding descriptor for this catalog reference

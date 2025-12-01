@@ -17,15 +17,10 @@
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.json</depends>
-    <depends>org.jetbrains.plugins.yaml</depends>
-
-    <depends>JavaScript</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <lang.foldingBuilder language="JSON" implementationClass="com.github.skoch13.pnpmcataloglens.folding.PnpmCatalogFoldingBuilder"/>
+        <postStartupActivity implementation="com.github.skoch13.pnpmcataloglens.listeners.PnpmStartupActivity"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.skoch13.pnpmcataloglens.listeners.PnpmWorkspaceActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
 </idea-plugin>
