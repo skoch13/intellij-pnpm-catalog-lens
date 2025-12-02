@@ -1,6 +1,7 @@
 import org.jetbrains.changelog.Changelog
 import org.jetbrains.changelog.markdownToHTML
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType
+import org.gradle.process.CommandLineArgumentProvider
 
 plugins {
     id("java") // Java support
@@ -107,7 +108,15 @@ intellijPlatform {
             val reducedProductReleases =
                 if (productReleases.size > 2) listOf(productReleases.first(), productReleases.last())
                 else productReleases
-            ides(reducedProductReleases)
+
+            reducedProductReleases.forEach { notation ->
+                val parts = notation.split(":", limit = 2)
+                if (parts.size == 2) {
+                    val type = parts[0]
+                    val version = parts[1]
+                    create(type, version) { }
+                }
+            }
         }
     }
 }

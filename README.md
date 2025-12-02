@@ -11,7 +11,8 @@
 </p>
 
 <!-- Plugin description -->
-Displays actual versions for [PNPM catalogs](https://pnpm.io/catalogs) in your `package.json` files.
+Displays actual versions for [PNPM catalogs](https://pnpm.io/catalogs) in your `package.json` files
+and provides `Go To Definition` for them.
 <!-- Plugin description end -->
 
 ![pnpm-catalog-lens](https://github.com/user-attachments/assets/cdc82e61-5c36-42ac-b5e6-40a92c001a97)

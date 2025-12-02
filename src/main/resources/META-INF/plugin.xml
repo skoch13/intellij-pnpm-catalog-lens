@@ -5,7 +5,7 @@
     <vendor email="skoch13@pm.me" url="https://github.com/skoch13">Sergey Kochetkov</vendor>
 
     <description><![CDATA[
-        <p>Displays actual versions for <a href="https://pnpm.io/catalogs">PNPM Catalogs</a> in your <code>package.json</code> files.</p>
+        <p>Displays actual versions for <a href="https://pnpm.io/catalogs">PNPM Catalogs</a> in your <code>package.json</code> files and provides `Go To Definition` for them.</p>
         <p>The plugin supports both default and named catalogs:</p>
         <ul>
             <li>Default catalog: <code>catalog:</code></li>
@@ -17,10 +17,14 @@
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.json</depends>
+    <depends>org.jetbrains.plugins.yaml</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <lang.foldingBuilder language="JSON" implementationClass="com.github.skoch13.pnpmcataloglens.folding.PnpmCatalogFoldingBuilder"/>
         <postStartupActivity implementation="com.github.skoch13.pnpmcataloglens.listeners.PnpmStartupActivity"/>
+        <psi.referenceContributor language="JSON" implementation="com.github.skoch13.pnpmcataloglens.references.PnpmCatalogReferenceContributor"/>
+        <codeInsight.lineMarkerProvider language="JSON" implementationClass="com.github.skoch13.pnpmcataloglens.references.PnpmCatalogLineMarkerProvider"/>
+        <gotoDeclarationHandler implementation="com.github.skoch13.pnpmcataloglens.references.PnpmCatalogGotoDeclarationHandler"/>
     </extensions>
 
 </idea-plugin>

@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Add `Go To Definition` for PNPM Catalog dependencies in `package.json`: via a gutter icon and via Cmd/Ctrl‑click on folded values (e.g., `"catalog:react18"`) to navigate to the matching entry in `pnpm-workspace.yaml`.
+
 ## [0.0.4] - 2025-12-01
 
 ### Added
