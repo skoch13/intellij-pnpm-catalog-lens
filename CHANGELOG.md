@@ -4,7 +4,9 @@
 
 ## [Unreleased]
 
-### Added 
+## [0.2.0] - 2026-03-26
+
+### Added
 
 - Increased compatibility range with 262.* versions
 
@@ -58,7 +60,8 @@
 - Custom folds that reveal catalog version references
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
-[Unreleased]: https://github.com/skoch13/intellij-pnpm-catalog-lens/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/skoch13/intellij-pnpm-catalog-lens/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/skoch13/intellij-pnpm-catalog-lens/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/skoch13/intellij-pnpm-catalog-lens/compare/v0.0.4...v0.1.0
 [0.0.4]: https://github.com/skoch13/intellij-pnpm-catalog-lens/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/skoch13/intellij-pnpm-catalog-lens/compare/v0.0.2...v0.0.3
