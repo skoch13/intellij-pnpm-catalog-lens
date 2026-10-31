@@ -6,7 +6,7 @@
 
 ### Added
 
-- Increased compatibility range with 263.* versions
+- Increased compatibility range with 263.* and all future versions
 
 ## [0.2.0] - 2026-03-26
 
