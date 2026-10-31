@@ -101,22 +101,10 @@ intellijPlatform {
         channels = providers.gradleProperty("pluginVersion").map { listOf(it.substringAfter('-', "").substringBefore('.').ifEmpty { "default" }) }
     }
 
-    // https://github.com/JetBrains/intellij-platform-plugin-template/issues/462#issuecomment-2745197887
     pluginVerification {
         ides {
-            val productReleases = ProductReleasesValueSource().get()
-            val reducedProductReleases =
-                if (productReleases.size > 2) listOf(productReleases.first(), productReleases.last())
-                else productReleases
-
-            reducedProductReleases.forEach { notation ->
-                val parts = notation.split(":", limit = 2)
-                if (parts.size == 2) {
-                    val type = parts[0]
-                    val version = parts[1]
-                    create(type, version) { }
-                }
-            }
+            current()
+            latest()
         }
     }
 }
